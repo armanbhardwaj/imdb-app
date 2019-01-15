@@ -28,7 +28,7 @@ class App extends Component {
     this.props.handleChange(e.target.value, str)
   }
   _handleKeyPress = (e) => {
-    alert();
+    // alert();
     console.log(e);
     console.log("e");
 
