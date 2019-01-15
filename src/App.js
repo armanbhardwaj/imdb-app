@@ -16,7 +16,7 @@ import {
   makeselectgenre
 } from './container/selectors';
 
-
+import Image from './images/IMDb_Header_Page.jpg';
 
 class App extends Component {
   changeHandler = (e) => {
@@ -27,6 +27,16 @@ class App extends Component {
     }
     this.props.handleChange(e.target.value, str)
   }
+  _handleKeyPress = (e) => {
+    alert();
+    console.log(e);
+    console.log("e");
+
+    if (e.key === 'Enter') {
+      this.changeHandler(e);
+    }
+  }
+  
   handleClick =()=>{
     var hr = document.getElementById('line');
     if(hr.style.visibility === "hidden")
@@ -37,10 +47,10 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="header">
-        <img alt="header" className="rounded IMDb_Header_Page" src="C:\Users\ba30291\Desktop\my-app\src\IMDb_Header_Page.jpg" />
+        <img alt="header" className="rounded IMDb_Header_Page" src={Image} />
         <div className="container">
           <p className="h1 heading">Search Movies Here...</p>
-          <Input className='col-9 field'placeholder="Search Movies here.." onChange={this.changeHandler} type="text" value={this.props.input} />
+          <Input className='col-9 field' placeholder="Search Movies here.." onChange={this.changeHandler} type="text" onKeyPress={(e)=>this._handleKeyPress(e)} value={this.props.input} />
           <Button id="buttonID" className='col-2 btn btn-primary ml2' onClick={this.handleClick}>Search</Button>
           <hr className="hr" id="line"/>
           <p className="h1">{this.props.title}</p>

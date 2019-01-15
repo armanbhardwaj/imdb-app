@@ -1,7 +1,7 @@
 body{
     /* font-family: Brushstroke, fantasy; */
 }
-.IMDb_Header_Page{width:100%; height:250px;}
+/* .IMDb_Header_Page{width:100%; height:auto;} */
 .container{width:80%;margin:auto; padding:30px; border:0px solid black;}
 .show{display:flex}
 .hr{margin-top:30px; border-color:#aaa; visibility:hidden}
